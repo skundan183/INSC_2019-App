@@ -1,0 +1,25 @@
+page-share {
+	ion-content {
+	    left: 15%;
+	    top: 20%;
+	    position: absolute;
+	    display: block;
+	    width: 70%;
+	    height: 60%;
+	    contain: strict;
+	    border-radius: 10px;
+	}
+	.social-share {
+		padding: 5px;
+	    background-color: white;
+	    border: 1px solid #352300;
+	    border-radius: 5px;
+	}
+	.share-icon{
+		color: white;
+    	margin-top: 10px;
+	}
+	ion-title {
+		padding: 5px 10px !important;
+	}
+}

@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Voting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<h4 padding *ngIf="error_message != ''">{{ error_message }}</h4>
+	<div *ngFor="let session of sessions">
+		<div *ngIf="session.session_id == session_id">
+			<p class="session">{{ session.session_name }}</p>
+			<ion-list *ngFor="let item of questions" (click)="goToDetails(item)">
+			    <ion-item text-wrap *ngIf="item.session_id == session_id">
+			    	<p>{{ item.question }}</p>
+			    	<ion-icon name="ios-arrow-forward" item-end></ion-icon>
+			  	</ion-item>
+			</ion-list>
+		</div>
+	</div>
+</ion-content>

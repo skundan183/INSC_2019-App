@@ -1,0 +1,63 @@
+page-abstract {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	    font-weight: 400 !important;
+	    font-size: 15px !important;
+	    color: #5d5d5d !important;
+	    line-height: 26px !important;
+	}
+	.card-header {
+	    font-size: 1.0em;
+	    width: 100%;
+	    color: white;
+	    text-align:center;
+	    padding:8px
+	}
+	.card-body {
+	    width: 100%;
+	    text-align:center;
+	    padding:5px;
+	    color:#4c4b4b;
+	}
+	.msg-header {
+	    font-size: 1.5em;
+	    width: 100%;
+	    font-weight: bold;
+	    text-align: center;
+	    padding: 10px;
+	    color: #352300;
+	    background-color: #FFFFFF;
+	}
+	.sub-header{
+		font-size: 1.1em;
+	    font-weight: bold;
+	    padding: 5px 10px;
+	}
+	ion-row {
+		border-top: 1px solid #ccc;
+	}
+	ion-col{
+		border-right: 1px solid #ccc;
+		text-align: left !important;
+	}
+	ul li {
+	    font-size: 15px;
+	    color: #5d5d5d;
+	    line-height: 26px;
+	}
+	ul .my-nav {
+		font-size: 1.5rem;
+	  	list-style-type: disk;
+	}
+	ol .my-nav {
+		font-size: 1.5rem;
+		padding-left: 30px;
+	  	list-style-type: number;
+	}
+	.abstract_closed {
+		color: #A62122 !important;
+		font-size: 18px !important;
+		text-align: center !important;
+		font-weight: 600;
+	}
+}

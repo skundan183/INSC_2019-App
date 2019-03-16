@@ -1,0 +1,18 @@
+page-voting {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	}
+	ion-item {
+		margin-bottom: 5px !important;
+	}
+	ion-item .item-inner {
+    	border-bottom: 0px !important;
+    }
+    p {
+    	color: #352300;
+    }
+    .session {
+    	font-weight: 600;
+    	color: #352300;
+    }
+}

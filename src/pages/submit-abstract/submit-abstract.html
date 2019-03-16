@@ -1,0 +1,103 @@
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Submit Abstract</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<form #myForm="ngForm" (ngSubmit)="submit(data)">
+		<ion-input type="hidden" [(ngModel)]="data.abstract_topic" name="abstract_topic"></ion-input>
+		<ion-item>
+			<ion-label floating>First Name *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.fname" name="fname"></ion-input>
+	  	</ion-item>
+		<ion-item>
+			<ion-label floating>Last Name *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.lname" name="lname"></ion-input>
+	  	</ion-item>
+		<ion-item>
+			<ion-label floating>Email *</ion-label>
+			<ion-input type="email" [(ngModel)]="data.email" name="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Mobile No. *</ion-label>
+			<ion-input type="number" [(ngModel)]="data.mobile" name="mobile"></ion-input>
+		</ion-item>
+		<div class="is_registered">
+			<ion-label>Do you have registration number?</ion-label>
+			<ion-list radio-group [(ngModel)]="data.is_registered" name="is_registered">
+			<ion-grid>
+				<ion-row>
+					<ion-col col-2>
+						<ion-radio value="1" [checked]="true"></ion-radio>
+					</ion-col>
+					<ion-col col-4>Yes</ion-col>
+			    	<ion-col col-2>
+				    	<ion-radio value="0"></ion-radio>
+				    </ion-col>
+					<ion-col col-4>No</ion-col>
+				</ion-row>
+			</ion-grid>
+			</ion-list>
+		</div>
+		<ion-item *ngIf="data.is_registered=='1'">
+			<ion-label floating>INSC Reg. Number *</ion-label>
+			<ion-input type="text" [(ngModel)]="data.insc_regno" name="insc_regno"></ion-input>
+		</ion-item>
+		<ion-item style="margin-top:15px">
+			<ion-label>Abstract Topic</ion-label>
+		    <ion-select [(ngModel)]="data.abstract_topic" name="abstract_topic">
+		    	<ion-option value="" [selected]="true">Select</ion-option>
+				<ion-option value="Imaging in Stroke">Imaging in Stroke</ion-option>
+				<ion-option value="Endovascular Management/Neurointervention in Stroke">Endovascular Management/Neurointervention in Stroke</ion-option>
+				<ion-option value="Stroke Thrombolysis">Stroke Thrombolysis</ion-option>
+				<ion-option value="Newer Therapies">Newer Therapies</ion-option>
+				<ion-option value="Critical Care in Stroke">Critical Care in Stroke</ion-option>
+				<ion-option value="Cerebral venous Thrombosis">Cerebral venous Thrombosis</ion-option>
+				<ion-option value="Subarachnoid hemorrhage / Intracranial hemorrhage">Subarachnoid hemorrhage / Intracranial hemorrhage</ion-option>
+				<ion-option value="TIA">TIA</ion-option>
+				<ion-option value="Neurosurgery in Stroke">Neurosurgery in Stroke</ion-option>
+				<ion-option value="Newer diagnostic and investigating tools">Newer diagnostic and investigating tools</ion-option>
+				<ion-option value="Paediatric Stroke">Paediatric Stroke</ion-option>
+				<ion-option value="Stroke and Cardiac Issues">Stroke and Cardiac Issues</ion-option>
+				<ion-option value="Emerging Risk Factors">Emerging Risk Factors</ion-option>
+				<ion-option value="Stroke Clinical Trials">Stroke Clinical Trials</ion-option>
+				<ion-option value="Stroke Public Awareness Modules">Stroke Public Awareness Modules</ion-option>
+				<ion-option value="Vascular Dementia">Vascular Dementia</ion-option>
+				<ion-option value="Neurosonology">Neurosonology</ion-option>
+				<ion-option value="Neuroprotection">Neuroprotection</ion-option>
+				<ion-option value="Stroke Rehabilitation">Stroke Rehabilitation</ion-option>
+				<ion-option value="Genetics and Translation Research">Genetics and Translation Research</ion-option>
+				<ion-option value="Preventive Strategies">Preventive Strategies</ion-option>
+				<ion-option value="Others">Others</ion-option>
+			</ion-select>
+	  	</ion-item>
+	  	<ion-item>
+			<ion-label floating>Abstract Title *</ion-label>
+			<ion-textarea [(ngModel)]="data.abstract_title" name="abstract_title" rows="5" (keyup)="checkTitle(data.abstract_title)"></ion-textarea>
+		</ion-item>
+		<p>Max. 50 words is allowed.</p>
+		<ion-item>
+			<ion-label floating>Presenting Author *</ion-label>
+			<ion-input type="text" [(ngModel)]="data.presenting_author" name="presenting_author"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Affiliation *</ion-label>
+			<ion-input type="text" [(ngModel)]="data.affiliation" name="affiliation"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Co Authors</ion-label>
+			<ion-input type="text" [(ngModel)]="data.co_authors" name="co_authors"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Abstract *</ion-label>
+			<ion-textarea [(ngModel)]="data.abstract" name="abstract" rows="10" (keyup)="checkTitle(data.abstract)"></ion-textarea>
+		</ion-item>
+		<p>Max. 250 words is allowed.</p>
+		<div padding>
+			<button type="submit" ion-button block color='navbarColor'>Submit Abstract</button>
+		</div>
+	</form>
+</ion-content>

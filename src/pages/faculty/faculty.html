@@ -1,0 +1,40 @@
+
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Faculty</ion-title>
+  </ion-navbar>
+  <ion-toolbar color='navbarColor'>
+    <ion-segment [(ngModel)]="faculty" color="light">
+      <ion-segment-button value="international" (click)="onSegmentSelected('international')"> INTERNATIONAL </ion-segment-button>
+      <ion-segment-button value="national" (click)="onSegmentSelected('national')"> NATIONAL </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+	<div *ngIf="faculty == 'international'">
+	    <ion-list inset *ngFor="let item of international">
+		  	<ion-item text-wrap>
+		  		<ion-avatar item-start>
+			      <img src="{{item.photo}}">
+			    </ion-avatar>
+			    <h2>{{item.name}}</h2>
+			    <p>{{item.location}}</p>
+		  	</ion-item>
+		</ion-list>
+	</div>
+	<div *ngIf="faculty == 'national'">
+	    <ion-list inset *ngFor="let item of national">
+		  	<ion-item text-wrap>
+		  		<ion-avatar item-start>
+			      <img src="{{item.photo}}">
+			    </ion-avatar>
+			    <h2>{{item.name}}</h2>
+			    <p>{{item.location}}</p>
+		  	</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

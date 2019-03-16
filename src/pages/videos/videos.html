@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar color="navbarColor">
+    <ion-title>Videos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-item style="margin-top:15px">
+		<ion-label>Session *</ion-label>
+		<ion-select [(ngModel)]="session_id" name="session_id" (ionChange)="changeSession(this.session_id)">
+			<ion-option *ngFor="let session of items" value="{{session.session_id}}">{{session.session_name}}</ion-option>
+		</ion-select>
+	</ion-item>
+	<div padding></div>
+	<ion-card text-wrap *ngFor="let item of videos" (click)="playVideo(item.video)">
+		<img src="{{item.image}}">
+		<ion-icon name="play"></ion-icon>
+	</ion-card>
+	<div padding *ngIf="error_message != ''">
+		<p class="errmsg">{{error_message}}</p>
+	</div>
+</ion-content>

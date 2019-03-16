@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color='navbarColor'></ion-navbar>
+  <ion-toolbar color='navbarColor'>
+  	<h2>{{title}}</h2>
+  	<p>{{start_date}}, {{start_time}} - {{end_time}}</p>
+    <p><strong>Venue:</strong> {{venue}}</p>
+    <ion-row>
+      <ion-col *ngIf="conveners != '' && conveners != null"><strong>Conveners</strong><br/>{{conveners}}</ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="workshop_details.length > 0">
+  	<ion-list inset *ngFor="let item of workshop_details">
+  		<ion-item text-wrap>
+  			<h2>{{item.topic}} <span>- {{item.type}}</span></h2>
+  			<p>{{item.faculty}}</p>
+  			<p *ngIf="item.start_time != '' && item.start_time != null">{{item.start_time}} - {{item.end_time}}</p>
+        <p class="progress" *ngIf="item.status == 1">Session in Progress</p>
+        <p class="completed" *ngIf="item.status == 2">Session Completed</p>
+  		</ion-item>
+  	</ion-list>
+  </div>
+  <ion-fab bottom right (click)="getWorkshop()">
+    <button ion-fab color="navbarColor"><ion-icon name="sync"></ion-icon></button>
+  </ion-fab>
+</ion-content>

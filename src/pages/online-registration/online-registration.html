@@ -1,0 +1,127 @@
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Online Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<form #myForm="ngForm" (ngSubmit)="register(data)">
+		<ion-input type="hidden" [(ngModel)]="data.gender" name="gender"></ion-input>
+		<ion-input type="hidden" [(ngModel)]="data.reg_type" name="reg_type"></ion-input>
+		<ion-item>
+			<ion-label floating>First Name *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.fname" name="fname"></ion-input>
+	  	</ion-item>
+		<ion-item>
+			<ion-label floating>Last Name *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.lname" name="lname"></ion-input>
+	  	</ion-item>
+		<ion-item>
+			<ion-label floating>Email (Username) *</ion-label>
+			<ion-input type="email" [(ngModel)]="data.email" name="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Password *</ion-label>
+			<ion-input type="password" [(ngModel)]="data.password" name="password"></ion-input>
+		</ion-item>
+		<ion-item style="margin-top:15px">
+			<ion-label>Gender *</ion-label>
+		    <ion-select [(ngModel)]="data.gender" name="gender">
+				<ion-option value="Male" [selected]="true">Male</ion-option>
+				<ion-option value="Female">Female</ion-option>
+			</ion-select>
+	  	</ion-item>
+	  	<ion-item style="margin-top:15px">
+			<ion-label>Birth Date * <span class="dob">{{ data.dob }}</span></ion-label>
+		    <ion-icon name="calendar" item-end (click)="getDOB()"></ion-icon>
+	  	</ion-item>
+	  	<ion-item>
+			<ion-label floating>Address *</ion-label>
+			<ion-textarea [(ngModel)]="data.address" name="address" rows="3"></ion-textarea>
+		</ion-item>
+	  	<ion-item>
+		    <ion-label floating>City *</ion-label>
+			<ion-input type="text" [(ngModel)]="data.city" name="city"></ion-input>
+		</ion-item>
+	  	<ion-item>
+			<ion-label floating>State *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.state" name="state"></ion-input>
+		</ion-item>
+		<ion-item>
+		    <ion-label floating>Country *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.country" name="country"></ion-input>
+		  	</ion-item>
+		<ion-item>
+		    <ion-label floating>Pincode *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.pincode" name="pincode"></ion-input>
+		</ion-item>
+		<ion-item>
+		    <ion-label floating>Contact No.</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.contactno" name="contactno"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Mobile No. *</ion-label>
+			<ion-input type="number" [(ngModel)]="data.mobile" name="mobile"></ion-input>
+		</ion-item>
+		<div class="is_member">
+			<ion-label>ISA Membership?</ion-label>
+			<ion-list radio-group [(ngModel)]="data.is_member" name="is_member">
+				<ion-row>
+					<ion-col col-2>
+						<ion-radio value="Yes" [checked]="true"></ion-radio>
+					</ion-col>
+					<ion-col col-4>Yes</ion-col>
+			    	<ion-col col-2>
+				    	<ion-radio value="No"></ion-radio>
+				    </ion-col>
+					<ion-col col-4>No</ion-col>
+				</ion-row>
+			</ion-list>
+		</div>
+		<ion-item *ngIf="data.is_member=='Yes'">
+			<ion-label floating>ISA Membership No. *</ion-label>
+			<ion-input type="text" [(ngModel)]="data.isa_membership" name="isa_membership"></ion-input>
+	  	</ion-item>
+	  	<ion-item>
+			<ion-label floating>State Council Reg. No. *</ion-label>
+			<ion-input type="text" [(ngModel)]="data.councilregno" name="councilregno"></ion-input>
+	  	</ion-item>
+	  	<ion-item>
+			<ion-label floating>Qualification</ion-label>
+			<ion-input type="text" [(ngModel)]="data.qualification" name="qualification"></ion-input>
+	  	</ion-item>
+	  	<ion-item>
+			<ion-label floating>Qualification Year</ion-label>
+			<ion-input type="number" [(ngModel)]="data.qualification_year" name="qualification_year"></ion-input>
+	  	</ion-item>
+	  	<ion-item style="margin-top: 20px">
+	  		<ion-label>Registration Type *</ion-label>
+		    <ion-select [(ngModel)]="data.reg_type" name="reg_type" (ionChange)="calcAmount(this.data)">
+		    	<ion-option value="" [selected]="true">Select</ion-option>
+				<ion-option value="ISA Members">ISA Members</ion-option>
+				<ion-option value="Non-Members">Non-Members</ion-option>
+				<ion-option value="PG Students">PG Students</ion-option>
+				<ion-option value="Accompanying Persons">Accompanying Persons</ion-option>
+				<ion-option value="Foreign Delegates">Foreign Delegates</ion-option>
+			</ion-select>
+	  	</ion-item>
+	  	<ion-item>
+			<ion-label floating>Registration Fee</ion-label>
+			<ion-input type="hidden" [(ngModel)]="data.amount" name="amount" readonly></ion-input>
+			<ion-input type="hidden" [(ngModel)]="data.currency" name="currency" readonly></ion-input>
+			<ion-input type="text" [(ngModel)]="data.reg_fee" name="reg_fee" readonly></ion-input>
+		</ion-item>
+		<div padding>
+			<ion-row>
+				<ion-col col-6>
+					<button type="button" ion-button block color='navbarColor' (click)="save(data)">Save</button>
+				</ion-col>
+				<ion-col col-6>
+					<button type="submit" ion-button block color='navbarColor'>Submit</button>
+				</ion-col>
+			</ion-row>
+		</div>
+	</form>
+</ion-content>

@@ -1,0 +1,50 @@
+
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Committee</ion-title>
+  </ion-navbar>
+  <ion-toolbar color='navbarColor'>
+    <ion-segment [(ngModel)]="committee" color="light">
+      <ion-segment-button value="isa_executive" (click)="onSegmentSelected('isa_executive')"> ISA Executive </ion-segment-button>
+      <ion-segment-button value="organizing" (click)="onSegmentSelected('organizing')"> Organizing </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content>
+	<div *ngIf="committee == 'isa_executive'">
+	    <ion-list inset *ngFor="let item of isa_executive">
+	    	<ion-item-divider *ngIf="item.type == '1'">{{item.title}}</ion-item-divider>
+		  	<ion-item text-wrap *ngIf="item.type == '0'">
+		  		<ion-avatar item-start>
+			      <img src="{{item.photo}}">
+			    </ion-avatar>
+			    <h2>{{item.name}}</h2>
+			    <p>{{item.designation}}</p>
+		  	</ion-item>
+		</ion-list>
+	</div>
+	<div *ngIf="committee == 'organizing'">
+	    <ion-list inset *ngFor="let item of organizing">
+	    	<ion-item-divider *ngIf="item.type == '1'">{{item.title}}</ion-item-divider>
+	    	<ion-item-divider class="subtype" *ngIf="item.type == '2'">{{item.title}}</ion-item-divider>
+		  	<ion-item text-wrap *ngIf="item.type == '0'">
+		  		<ion-avatar item-start>
+			      <img src="{{item.photo}}">
+			    </ion-avatar>
+			    <h2>{{item.name}}</h2>
+			    <p>{{item.designation}}</p>
+		  	</ion-item>
+		  	<ion-item text-wrap *ngIf="item.type == '3'">
+		  		<ion-avatar item-start>
+			      <img src="assets/imgs/committee/avatar.png">
+			    </ion-avatar>
+			    <h2>{{item.name}}</h2>
+			    <p>{{item.location}}</p>
+		  	</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

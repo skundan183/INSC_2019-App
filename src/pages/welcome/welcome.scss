@@ -1,0 +1,23 @@
+page-welcome {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	}
+	p {
+	    font-size: 15px;
+	    text-align: justify;
+	    line-height: 26px;
+	}
+	p strong {
+		color: #5d5d5d;
+	}
+	photo_section {
+		margin-top: 20px;
+		text-align: center !important;
+	}
+	img{
+	  height: auto;
+	  width: auto;
+	  margin: auto;
+	  display: block;
+	}
+}

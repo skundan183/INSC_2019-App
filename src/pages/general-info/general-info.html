@@ -1,0 +1,67 @@
+
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>General Information</ion-title>
+  </ion-navbar>
+  <ion-toolbar color='navbarColor'>
+    <ion-segment [(ngModel)]="info_type" color="light">
+      <ion-segment-button value="venue" (click)="onSegmentSelected('venue')"> VENUE </ion-segment-button>
+      <ion-segment-button value="accommodation" (click)="onSegmentSelected('accommodation')"> ACCOMMODATION </ion-segment-button>
+      <ion-segment-button value="attractions" (click)="onSegmentSelected('attractions')"> ATTRACTIONS </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+	<div *ngIf="info_type == 'venue'">
+		<ion-card>
+			<ion-card-content>
+				<p><strong>Grand O7 (Forum)</strong><br/>
+					Near Bopal 444, Off S.P. Ring Road, Club O7 Road, Shela, Ahmedabad, Gujarat 380058 <a (click)="viewInMap('https://goo.gl/maps/4msk6sUQksD2')">View in Map</a><br/>
+					<strong>Phone:</strong> <a href="tel:02717 245 703">02717 245 703</a><br/>
+					<strong>Mobile:</strong> <a href="tel:+91 7698022242">+91 7698022242</a><br/>
+					<strong>Email:</strong> <a href="mailto:info@grando7.com">info@grando7.com</a>
+				</p>
+			</ion-card-content>
+		</ion-card>
+		<ion-card *ngFor="let item of venue_images">
+			<img src="{{item.src}}" (click)="showFullPhoto(item.src)" />
+		</ion-card>
+	</div>
+	<div *ngIf="info_type == 'accommodation'">
+		<div *ngFor="let item of accomodation">
+			<ion-item-divider *ngIf="item.type == '1'">{{ item.title }}</ion-item-divider>
+			<ion-card *ngIf="item.type == '0'">
+				<img src="{{ item.photo }}" (click)="showFullPhoto(item.photo)" />
+				<ion-card-content>
+					<h2>{{ item.title }}</h2>
+					<p>{{ item.desc }}</p>
+				</ion-card-content>
+			</ion-card>
+		</div>
+	</div>
+	<div *ngIf="info_type == 'attractions'">
+		<ion-item-divider>SCIENTIFIC ATTRACTIONS</ion-item-divider>
+		<ion-card>
+			<ul class="my-nav">
+				<li>Workshop (Neurosonology, Neurorehabilitation, Post Stroke Rehabilitation)</li>
+				<li>American Society of Neurosonology (ASN) Exam Certification.</li>
+				<li>Stroke quiz for residents</li>
+				<li>Stroke Fellowships – meet the National & International experts</li>
+				<li>What Mentors wish their Mentees knew – Cases</li>
+			</ul>
+		</ion-card>
+		<ion-item-divider>LOCAL ATTRACTIONS</ion-item-divider>
+		<ion-card *ngFor="let item of local_attractions">
+			<img src="{{item.photo}}" (click)="showFullPhoto(item.photo)" />
+			<ion-card-content>
+				<h2>{{item.title}}</h2>
+				<p>{{item.desc}}</p>
+				<a (click)="viewInMap(item.url)">View in Map</a>
+			</ion-card-content>
+		</ion-card>
+	</div>
+</ion-content>

@@ -1,0 +1,60 @@
+page-scientific-programme {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	}
+	h2 span {
+		font-size: 11px !important;
+	}
+	ion-item p {
+		padding: 5px 0px;
+	}
+	.type0 {
+		background-color: #734e04 !important;
+		color: white;
+	}
+	.grid {
+		background-color: white !important;
+		text-align: center !important;
+	}
+	.completed {
+		color: #c50000;
+	    font-weight: 600;
+	    border-right: 1px solid #ccc;
+	}
+	.videos {
+		color: #0f0f42;
+	    font-weight: 600;
+	    border-right: 1px solid #ccc;
+	}
+	.voting {
+		font-weight: 600;
+    	color: #0f0f42;
+	}
+	.progress {
+		color: green;
+		font-size: 14px !important;
+		font-weight: 600;
+		animation-name: fade;
+	  	animation-fill-mode: both;
+	  	animation-iteration-count: infinite;
+	  	animation-duration: 0.5s;
+	  	animation-direction: alternate-reverse;
+	}
+	@keyframes fade{
+	    0% {
+	      opacity: 0;
+		}
+		25% {
+	      opacity: 0.25;
+		}
+		50% {
+	      opacity: 0.5;
+		}
+		75% {
+	      opacity: 0.75;
+		}
+	    100%{
+	      opacity: 1;
+	  	}
+	}
+}

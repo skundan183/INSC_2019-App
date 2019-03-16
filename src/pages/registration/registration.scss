@@ -1,0 +1,53 @@
+page-registration {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	    font-weight: 400 !important;
+	    font-size: 15px !important;
+	    color: #5d5d5d !important;
+	    line-height: 26px !important;
+	}
+	.card-header {
+	    font-size: 1.0em;
+	    width: 100%;
+	    color: white;
+	    text-align:center;
+	    padding:8px
+	}
+	.card-body {
+	    width: 100%;
+	    text-align:center;
+	    padding:5px;
+	    color:#4c4b4b;
+	}
+	.card-header ion-col {
+		border-right: 0px solid #ccc;
+	}
+	.msg-header {
+	    font-size: 1.5em;
+	    width: 100%;
+	    font-weight: bold;
+	    text-align: center;
+	    padding: 10px;
+	    color: #352300;
+	    background-color: #FFFFFF;
+	}
+	.sub-header{
+		font-size: 1.1em;
+	    font-weight: bold;
+	    padding: 5px 10px;
+	}
+	.msg-text {
+	    font-size: 1.1em;
+	    width: 100%;
+	    text-align:justify;
+	}
+	.fee_includes ion-col{
+		text-align: left;
+	}
+	button {
+		padding: 25px 1.1em !important;
+	}
+	.strike {
+		text-decoration: line-through;
+	}
+}

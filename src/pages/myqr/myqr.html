@@ -1,0 +1,18 @@
+
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>My QR</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+	<img src="{{ qrcode }}" >
+	<div padding></div>
+	<div padding>
+		<button ion-button block color='navbarColor' (click)="scanQR()">Scan QR</button>
+		<p>Use "Scan QR" to scan other delegates QR code and save their details in your device contacts.</p> 
+	</div>
+</ion-content>

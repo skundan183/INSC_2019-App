@@ -1,0 +1,27 @@
+page-videos {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	}
+	ion-item {
+		padding-top: 10px !important; 
+		padding-bottom: 10px !important;
+		margin-bottom: 5px !important;
+	}
+	ion-item .item-inner {
+    	border-bottom: 0px !important;
+    }
+    .errmsg {
+    	text-align: center;
+    	font-size: 18px;
+    	font-weight: 600px
+    }
+    ion-card ion-icon {
+    	position: absolute;
+	    top: 50%;
+	    left: 45%;
+	    padding: 15px 18px;
+	    background-color: white;
+	    border-radius: 50%;
+	    font-size: 32px;
+    }
+}

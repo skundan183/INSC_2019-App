@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<form #myForm="ngForm" (ngSubmit)="login(formdata)">
+		<ion-item>
+			<ion-label stacked>Registration No *</ion-label>
+			<ion-input type="text" [(ngModel)]="formdata.regno" name="regno" placeholder="XXX"></ion-input>
+		</ion-item>
+		<p style="margin-left: 16px;">* enter last 3 digit of your registration no INSC201910XXX.</p> 
+		<ion-item>
+		    <ion-label stacked>Email/Mobile No *</ion-label>
+			<ion-input type="text" [(ngModel)]="formdata.username" name="username"></ion-input>
+		</ion-item>
+		<div padding>
+		  	<button type="submit" ion-button block color='navbarColor'>Login</button>
+		</div>
+	</form>
+</ion-content>

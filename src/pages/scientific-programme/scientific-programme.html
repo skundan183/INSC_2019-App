@@ -1,0 +1,97 @@
+<ion-header>
+
+  <ion-navbar color="navbarColor">
+    <ion-title>Scientific Programme</ion-title>
+  </ion-navbar>
+  <ion-toolbar color='navbarColor'>
+    <ion-segment [(ngModel)]="day" color="light">
+      <ion-segment-button value="day1" (click)="onSegmentSelected('day1')">15 MARCH</ion-segment-button>
+      <ion-segment-button value="day2" (click)="onSegmentSelected('day2')">16 MARCH</ion-segment-button>
+      <ion-segment-button value="day3" (click)="onSegmentSelected('day3')">17 MARCH</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+	<div [ngSwitch]="day" (tabChanged)="onTabChanged($event)">
+    <div *ngSwitchCase="'day1'">
+      <ion-list inset *ngFor="let item of day1">
+        <ion-item text-wrap *ngIf="item.type == 0" class="type0">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+        </ion-item>
+        <ion-item text-wrap *ngIf="item.type == 1" (click)="sessionDetails(item.session_id, item.session_name, item.title, item.moderator, item.chairman, item.start_time, item.end_time)">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+          <p>{{item.title}}</p>
+          <p *ngIf="item.chairman != null">Chair: {{item.chairman}}</p>
+          <p class="progress" *ngIf="item.status == 1">Session in Progress</p>
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </ion-item>
+        <ion-grid *ngIf="item.type == 1 && item.status == 2" class="grid">
+          <ion-row>
+              <ion-col col-4 class="completed">Completed</ion-col>
+              <ion-col col-4 class="videos" (click)="goForVideos(item.session_id)">Videos <ion-icon name="share-alt"></ion-icon></ion-col>
+              <ion-col col-4 class="voting" (click)="goForVoting(item.session_id)">Voting <ion-icon name="share-alt"></ion-icon></ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item text-wrap class="list-item" *ngIf="item.type == 2">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+          <p>{{item.chairman}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'day2'">
+      <ion-list inset *ngFor="let item of day2">
+        <ion-item text-wrap *ngIf="item.type == 0" class="type0">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+        </ion-item>
+        <ion-item text-wrap *ngIf="item.type == 1" (click)="sessionDetails(item.session_id, item.session_name, item.title, item.moderator, item.chairman, item.start_time, item.end_time)">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+          <p>{{item.title}}</p>
+          <p *ngIf="item.chairman != null">Chair: {{item.chairman}}</p>
+          <p class="progress" *ngIf="item.status == 1">Session in Progress</p>
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </ion-item>
+        <ion-grid *ngIf="item.type == 1 && item.status == 2" class="grid">
+          <ion-row>
+              <ion-col col-4 class="completed">Completed</ion-col>
+              <ion-col col-4 class="videos" (click)="goForVideos(item.session_id)">Videos <ion-icon name="share-alt"></ion-icon></ion-col>
+              <ion-col col-4 class="voting" (click)="goForVoting(item.session_id)">Voting <ion-icon name="share-alt"></ion-icon></ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item text-wrap class="list-item" *ngIf="item.type == 2">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+          <p>{{item.chairman}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'day3'">
+      <ion-list inset *ngFor="let item of day3">
+        <ion-item text-wrap *ngIf="item.type == 0" class="type0">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+        </ion-item>
+        <ion-item text-wrap *ngIf="item.type == 1" (click)="sessionDetails(item.session_id, item.session_name, item.title, item.moderator, item.chairman, item.start_time, item.end_time)">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+          <p>{{item.title}}</p>
+          <p *ngIf="item.chairman != null">Chair: {{item.chairman}}</p>
+          <p class="progress" *ngIf="item.status == 1">Session in Progress</p>
+          <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+        </ion-item>
+        <ion-grid *ngIf="item.type == 1 && item.status == 2" class="grid">
+          <ion-row>
+              <ion-col col-4 class="completed">Completed</ion-col>
+              <ion-col col-4 class="videos" (click)="goForVideos(item.session_id)">Videos <ion-icon name="share-alt"></ion-icon></ion-col>
+              <ion-col col-4 class="voting" (click)="goForVoting(item.session_id)">Voting <ion-icon name="share-alt"></ion-icon></ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-item text-wrap class="list-item" *ngIf="item.type == 2">
+          <h2>{{item.session_name}} <span>{{item.start_time}} - {{item.end_time}}</span></h2>
+          <p>{{item.chairman}}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+  <ion-fab bottom right (click)="getSProgramme()">
+    <button ion-fab color="navbarColor"><ion-icon name="sync"></ion-icon></button>
+  </ion-fab>
+</ion-content>

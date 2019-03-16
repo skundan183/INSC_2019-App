@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar color='navbarColor'>
+    <ion-title>Offline Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<form #myForm="ngForm" (ngSubmit)="submit(data)">
+		<ion-input type="hidden" [(ngModel)]="data.workshop" name="workshop"></ion-input>
+		<ion-item>
+			<ion-label floating>First Name *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.fname" name="fname"></ion-input>
+	  	</ion-item>
+		<ion-item>
+			<ion-label floating>Last Name *</ion-label>
+		    <ion-input type="text" [(ngModel)]="data.lname" name="lname"></ion-input>
+	  	</ion-item>
+		<ion-item>
+			<ion-label floating>Email *</ion-label>
+			<ion-input type="email" [(ngModel)]="data.email" name="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Mobile No. *</ion-label>
+			<ion-input type="number" [(ngModel)]="data.mobile" name="mobile"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Password *</ion-label>
+			<ion-input type="password" [(ngModel)]="data.password" name="password"></ion-input>
+		</ion-item>
+		<div class="is_workshop">
+			<ion-label>Do you want to register for Workshop?</ion-label>
+			<ion-list radio-group [(ngModel)]="data.is_workshop" name="is_workshop">
+			<ion-grid>
+				<ion-row>
+					<ion-col col-2>
+						<ion-radio value="1" [checked]="true"></ion-radio>
+					</ion-col>
+					<ion-col col-4>Yes</ion-col>
+			    	<ion-col col-2>
+				    	<ion-radio value="0"></ion-radio>
+				    </ion-col>
+					<ion-col col-4>No</ion-col>
+				</ion-row>
+			</ion-grid>
+			</ion-list>
+		</div>
+		<ion-item *ngIf="data.is_workshop=='1'" style="margin-top:15px">
+			<ion-label>Workshop *</ion-label>
+		    <ion-select [(ngModel)]="data.workshop" name="workshop">
+		    	<ion-option value="" [selected]="true">Select</ion-option>
+				<ion-option value="Neurosonology workshop">Neurosonology workshop</ion-option>
+				<ion-option value="Neurointervention workshop">Neurointervention workshop</ion-option>
+				<ion-option value="Post Stroke Rehabilitation workshop">Post Stroke Rehabilitation workshop</ion-option>
+			</ion-select>
+	  	</ion-item>
+	  	<ion-item style="margin-top:15px" text-wrap>
+			<ion-label>Payment/Transaction Receipt *</ion-label>
+		</ion-item>
+		<div padding>
+			<img src="{{select_image1}}" class="uploaded_image" (click)="presentActionSheet('payment')" *ngIf="payment_photo == ''">
+			<img src="{{payment_photo}}" class="uploaded_image" (click)="presentActionSheet('payment')" *ngIf="payment_photo != ''">
+		</div>
+		<ion-item style="margin-top:15px" text-wrap>
+			<ion-label>Registration Form *</ion-label>
+		</ion-item>
+		<div padding>
+			<img src="{{select_image2}}" class="uploaded_image" (click)="presentActionSheet('reg_photo')" *ngIf="reg_photo == ''">
+			<img src="{{reg_photo}}" class="uploaded_image" (click)="presentActionSheet('reg_photo')" *ngIf="reg_photo != ''">
+		</div>
+		<div padding>
+			<button type="submit" ion-button block color='navbarColor'>Submit</button>
+		</div>
+	</form>
+</ion-content>

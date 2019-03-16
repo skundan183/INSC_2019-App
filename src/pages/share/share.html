@@ -1,0 +1,26 @@
+<ion-content style="text-align: center">
+	<ion-toolbar>
+	    <ion-title>Share</ion-title>
+	</ion-toolbar>
+    <ion-grid style="text-align:center">
+	  	<ion-row>
+	  		<ion-col col-3 (click)="share('both-app')" style="padding: 7px">
+		    	<img src="assets/imgs/social/insc-small.png" class="social-share" />
+		    </ion-col>
+		    <ion-col col-3 (click)="share('apple')" style="padding: 7px">
+		    	<img src="assets/imgs/social/apple.png" class="social-share" />
+		    </ion-col>
+		    <ion-col col-3 (click)="share('android')" style="padding: 7px">
+		    	<img src="assets/imgs/social/android.png" class="social-share" />
+		    </ion-col>
+		    <ion-col col-3 (click)="share('facebook')" style="padding: 7px">
+		    	<img src="assets/imgs/social/facebook.png" class="social-share" />
+		    </ion-col>
+	  	</ion-row>
+	</ion-grid>
+    <ion-footer (click)="closeModal()">
+	  	<ion-toolbar>
+	    	<ion-title>Close</ion-title>
+	  	</ion-toolbar>
+	</ion-footer>
+</ion-content>

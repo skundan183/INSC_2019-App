@@ -1,0 +1,61 @@
+page-workshop-details {
+	p {
+	    font-size: 15px;
+	}
+	ion-item {
+		border-bottom: 1px solid #ccc !important;
+	}
+	ion-toolbar {
+		text-align: center;
+		color: white;
+	}
+	ion-toolbar p {
+		text-align: center;
+		color: white;
+	}
+	h2 {
+		margin-top: 0rem;
+	}
+	ion-row {
+		margin-bottom: 5px;
+	}
+	h2 span {
+		font-size: 11px !important;
+	}
+	.coming_soon {
+		text-align:center;
+		padding: 20px 0px !important;
+	}
+	.completed {
+		color: #c50000;
+	    font-weight: 600;
+	    border-right: 1px solid #ccc;
+	}
+	.progress {
+		color: green;
+		font-size: 14px !important;
+		font-weight: 600;
+		animation-name: fade;
+	  	animation-fill-mode: both;
+	  	animation-iteration-count: infinite;
+	  	animation-duration: 0.5s;
+	  	animation-direction: alternate-reverse;
+	}
+	@keyframes fade{
+	    0% {
+	      opacity: 0;
+		}
+		25% {
+	      opacity: 0.25;
+		}
+		50% {
+	      opacity: 0.5;
+		}
+		75% {
+	      opacity: 0.75;
+		}
+	    100%{
+	      opacity: 1;
+	  	}
+	}
+}

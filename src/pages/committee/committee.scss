@@ -1,0 +1,18 @@
+page-committee {
+	ion-content {
+	    background-color: #faf4e2 !important;
+	}
+	ion-item{
+		border-bottom: 1px solid #ccc !important;
+	}
+	ion-item-divider {
+		color: white !important;
+		background-color: #352300 !important;
+		text-align: center;
+		font-weight: 600;
+	}
+	.subtype {
+		background-color: #956235 !important;
+		text-align: left;
+	}
+}

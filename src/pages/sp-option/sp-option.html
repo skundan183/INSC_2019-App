@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar color="navbarColor">
+    <ion-title>Scientific Programme</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item text-wrap (click)="openPage('scientific-programme')">
+    	<h2>Scientific Programme</h2>
+    	<ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  	</ion-item>
+  	<ion-item (click)="openPage('workshop')">
+    	<ion-label>Pre-Conference Workshop</ion-label>
+    	<ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  	</ion-item>
+    <ion-item (click)="openPage('nursing')">
+      <ion-label>Nursing Symposium Program</ion-label>
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+  <img src="assets/imgs/sponsor_strip.png">
+</ion-footer>

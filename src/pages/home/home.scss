@@ -1,3 +1,49 @@
 page-home {
-
+	.toolbar-background {
+		background-color: #faf4e2 !important;
+	}
+	ion-toolbar img{
+		padding: 15px;
+		padding-bottom: 0px !important;
+	}
+	ion-content {
+	    background-color: #faf4e2 !important;
+	    text-align:center;
+	}
+	ion-content p {
+		color: #352300;
+		margin: 0px 0;
+		font-weight: 600;
+	}
+	ion-row {
+		margin: 8px 0px;
+	}
+	@media (min-height: 600px) {
+		ion-grid {
+			margin-top: 30px;
+		}
+		ion-col{
+			padding: 7px !important;
+			margin-bottom: 20px !important;
+		}
+	}
+	@media (max-height: 600px) {
+		ion-grid {
+			margin-top: 0px;
+		}
+		ion-col{
+			padding: 7px !important;
+			margin-bottom: 10px !important;
+		}
+	}
+	.facebook {
+		height: 35px;;
+	  	width: 35px;;
+	  	margin: auto;
+	  	display: block;
+	    border-radius: 5px;
+	}
+	.column {
+	  width: 50%;
+	}
 }

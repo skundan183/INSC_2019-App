@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "525231104821",
+    "firebase_url": "https://insc-2019.firebaseio.com",
+    "project_id": "insc-2019",
+    "storage_bucket": "insc-2019.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525231104821:android:379069c9171b6b0f",
+        "android_client_info": {
+          "package_name": "com.cmpl.insc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525231104821-5kohlf8jl0ik2vg4hs9pmknokg3eo2pa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARAQJPlQp1ZUyb1IzdxmZG_3_4aHtq53k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
